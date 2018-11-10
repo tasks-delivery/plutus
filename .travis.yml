@@ -37,7 +37,7 @@ jobs:
         - linux
       script:
         - mvn test
-    - stage: test
+#    - stage: test
 #     os:
 #       - linux
 #     env:
