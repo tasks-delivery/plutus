@@ -39,13 +39,14 @@ public class FreebitcoServiceImpl implements FreebitcoService{
         System.out.println("Password is entered");
         $(By.id("login_button")).click();
         System.out.println("Login is success");
-        System.out.println(WebDriverRunner.getWebDriver().getPageSource());
+
 
     }
 
     @Override
     public void getBTC(){
         Selenide.sleep(3000);
+        System.out.println(WebDriverRunner.getWebDriver().getPageSource());
         $(byText("PLAY WITHOUT CAPTCHA")).waitUntil(visible, 3000).scrollTo().click();
         System.out.println("Captcha is disabled");
         Selenide.sleep(3000);
