@@ -1,11 +1,10 @@
 package krans.freebitco;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -15,7 +14,7 @@ public class FreebitcoServiceImpl implements FreebitcoService{
     public void login(String wallet, String password){
         Configuration.browser = "firefox";
         Configuration.startMaximized = true;
-        Configuration.headless = true;
+        Configuration.headless = false;
         open("http://freebitco.in/?op=signup_page");
         $(byText("LOGIN")).click();
         $(byText("Got it!")).waitUntil(visible, 5000).click();
