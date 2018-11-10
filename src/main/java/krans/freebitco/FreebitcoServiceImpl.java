@@ -2,6 +2,7 @@ package krans.freebitco;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -38,6 +39,8 @@ public class FreebitcoServiceImpl implements FreebitcoService{
         System.out.println("Password is entered");
         $(By.id("login_button")).click();
         System.out.println("Login is success");
+        System.out.println(WebDriverRunner.getWebDriver().getPageSource());
+
     }
 
     @Override
