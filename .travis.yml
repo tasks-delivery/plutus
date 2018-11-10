@@ -36,7 +36,12 @@ jobs:
       os:
         - linux
       script:
-        - mvn test
+        - mvn test -P acc1
+    - stage: test
+      os:
+        - linux
+      script:
+        - mvn test -P acc2
 #    - stage: test
 #     os:
 #       - linux

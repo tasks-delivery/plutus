@@ -11,6 +11,16 @@ import static com.codeborne.selenide.Selenide.*;
 public class FreebitcoServiceImpl implements FreebitcoService{
 
     @Override
+    public void changeIp(){
+        try (java.util.Scanner s = new java.util.Scanner(new java.net.URL("https://api.ipify.org").openStream(), "UTF-8").useDelimiter("\\A")) {
+            System.out.println("My current IP address is " + s.next());
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
     public void login(String wallet, String password){
         Configuration.browser = "firefox";
         Configuration.baseUrl = "http://freebitco.in";
