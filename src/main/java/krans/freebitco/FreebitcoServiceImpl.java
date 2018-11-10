@@ -13,9 +13,10 @@ public class FreebitcoServiceImpl implements FreebitcoService{
     @Override
     public void login(String wallet, String password){
         Configuration.browser = "firefox";
+        Configuration.baseUrl = "http://freebitco.in";
         Configuration.startMaximized = true;
-        Configuration.headless = false;
-        open("http://freebitco.in/?op=signup_page");
+        Configuration.headless = true;
+        open("/?op=signup_page");
         System.out.println("Page is opened");
         $(byText("LOGIN")).click();
         System.out.println("Login tab is shown");

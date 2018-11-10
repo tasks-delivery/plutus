@@ -15,9 +15,9 @@ cache:
   - _build
   - deps
 
-before_install:
-- echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
-- git lfs pull
+#before_install:
+#- echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
+#- git lfs pull
 
 install:
 - mvn -N io.takari:maven:wrapper
