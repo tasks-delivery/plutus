@@ -16,19 +16,27 @@ public class FreebitcoServiceImpl implements FreebitcoService{
         Configuration.startMaximized = true;
         Configuration.headless = false;
         open("http://freebitco.in/?op=signup_page");
+        System.out.println("Page is opened");
         $(byText("LOGIN")).click();
+        System.out.println("Login tab is shown");
         $(byText("Got it!")).waitUntil(visible, 5000).click();
+        System.out.println("Popup is closed");
         $(By.name("btc_address")).val(wallet).pressTab();
+        System.out.println("Wallet is entered");
         $(By.cssSelector("#login_form_password")).val(password);
+        System.out.println("Password is entered");
         $(By.id("login_button")).click();
+        System.out.println("Login is success");
     }
 
     @Override
     public void getBTC(){
         Selenide.sleep(3000);
         $(byText("PLAY WITHOUT CAPTCHA")).waitUntil(visible, 3000).scrollTo().click();
+        System.out.println("Captcha is disabled");
         Selenide.sleep(3000);
         $(By.id("free_play_form_button")).scrollTo().click();
+        System.out.println("BTC is sent");
         Selenide.sleep(10000);
         close();
     }
