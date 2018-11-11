@@ -3,7 +3,8 @@ dist: trusty
 sudo: required
 group: deprecated-2017Q4
 addons:
-    - ssh_known_hosts: 114.55.40.149
+  hosts:
+    - travis.dev
 
 
 jdk: openjdk8
